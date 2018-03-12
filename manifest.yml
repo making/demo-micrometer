@@ -1,0 +1,6 @@
+applications:
+- name: demo-micrometer
+  instances: 3
+  memory: 1G
+  services:
+  - scheduler-development
