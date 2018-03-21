@@ -1,5 +1,7 @@
 package com.example.demomicrometer;
 
+import io.micrometer.core.aop.TimedAspect;
+import io.micrometer.core.instrument.MeterRegistry;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.actuate.autoconfigure.metrics.MeterRegistryCustomizer;
@@ -24,5 +26,10 @@ public class DemoMicrometerApplication {
                 "cf_app_name", applicationName, //
                 "cf_app_instance_id", instanceId //
         );
+    }
+
+    @Bean
+    public TimedAspect timedAspect(MeterRegistry meterRegistry) {
+        return new TimedAspect(meterRegistry);
     }
 }
