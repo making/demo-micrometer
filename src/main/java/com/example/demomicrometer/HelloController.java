@@ -11,7 +11,7 @@ public class HelloController {
         this.sleepService = sleepService;
     }
 
-    @GetMapping
+    @GetMapping(path = "/hello")
     public String hello() {
         return this.sleepService.sleep();
     }
