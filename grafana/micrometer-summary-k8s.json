@@ -348,7 +348,7 @@
               "expr": "system_cpu_usage{kubernetes_namespace=~\"$kubernetes_namespace\",app=~\"$app\",kubernetes_pod_name=~\"$kubernetes_pod_name\"}",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "{{cf_app_name}}/{{cf_app_instance_id}}",
+              "legendFormat": "{{kubernetes_namespace}}/{{app}}/{{kubernetes_pod_name}}",
               "refId": "A",
               "step": 20
             }
@@ -426,7 +426,7 @@
               "expr": "system_load_average_1m{kubernetes_namespace=~\"$kubernetes_namespace\",app=~\"$app\",kubernetes_pod_name=~\"$kubernetes_pod_name\"}",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "{{cf_app_name}}/{{cf_app_instance_id}}",
+              "legendFormat": "{{kubernetes_namespace}}/{{app}}/{{kubernetes_pod_name}}",
               "refId": "A",
               "step": 20
             }
@@ -517,7 +517,7 @@
               "expr": "logback_events_total{kubernetes_namespace=~\"$kubernetes_namespace\",app=~\"$app\",kubernetes_pod_name=~\"$kubernetes_pod_name\", level=\"trace\"}",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "{{cf_app_name}}/{{cf_app_instance_id}}",
+              "legendFormat": "{{kubernetes_namespace}}/{{app}}/{{kubernetes_pod_name}}",
               "refId": "A",
               "step": 20
             }
@@ -595,7 +595,7 @@
               "expr": "logback_events_total{kubernetes_namespace=~\"$kubernetes_namespace\",app=~\"$app\",kubernetes_pod_name=~\"$kubernetes_pod_name\", level=\"debug\"}",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "{{cf_app_name}}/{{cf_app_instance_id}}",
+              "legendFormat": "{{kubernetes_namespace}}/{{app}}/{{kubernetes_pod_name}}",
               "refId": "A",
               "step": 20
             }
@@ -673,7 +673,7 @@
               "expr": "logback_events_total{kubernetes_namespace=~\"$kubernetes_namespace\",app=~\"$app\",kubernetes_pod_name=~\"$kubernetes_pod_name\", level=\"info\"}",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "{{cf_app_name}}/{{cf_app_instance_id}}",
+              "legendFormat": "{{kubernetes_namespace}}/{{app}}/{{kubernetes_pod_name}}",
               "refId": "A",
               "step": 20
             }
@@ -751,7 +751,7 @@
               "expr": "logback_events_total{kubernetes_namespace=~\"$kubernetes_namespace\",app=~\"$app\",kubernetes_pod_name=~\"$kubernetes_pod_name\", level=\"warn\"}",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "{{cf_app_name}}/{{cf_app_instance_id}}",
+              "legendFormat": "{{kubernetes_namespace}}/{{app}}/{{kubernetes_pod_name}}",
               "refId": "A",
               "step": 20
             }
@@ -829,7 +829,7 @@
               "expr": "logback_events_total{kubernetes_namespace=~\"$kubernetes_namespace\",app=~\"$app\",kubernetes_pod_name=~\"$kubernetes_pod_name\", level=\"error\"}",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "{{cf_app_name}}/{{cf_app_instance_id}}",
+              "legendFormat": "{{kubernetes_namespace}}/{{app}}/{{kubernetes_pod_name}}",
               "refId": "A",
               "step": 20
             }
@@ -919,7 +919,7 @@
               "expr": "jvm_threads_peak{kubernetes_namespace=~\"$kubernetes_namespace\",app=~\"$app\",kubernetes_pod_name=~\"$kubernetes_pod_name\"}",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "{{cf_app_name}}/{{cf_app_instance_id}}",
+              "legendFormat": "{{kubernetes_namespace}}/{{app}}/{{kubernetes_pod_name}}",
               "refId": "A",
               "step": 4
             }
@@ -997,7 +997,7 @@
               "expr": "jvm_threads_daemon{kubernetes_namespace=~\"$kubernetes_namespace\",app=~\"$app\",kubernetes_pod_name=~\"$kubernetes_pod_name\"}",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "{{cf_app_name}}/{{cf_app_instance_id}}",
+              "legendFormat": "{{kubernetes_namespace}}/{{app}}/{{kubernetes_pod_name}}",
               "refId": "A",
               "step": 4
             }
@@ -1075,7 +1075,7 @@
               "expr": "jvm_threads_live{kubernetes_namespace=~\"$kubernetes_namespace\",app=~\"$app\",kubernetes_pod_name=~\"$kubernetes_pod_name\"}",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "{{cf_app_name}}/{{cf_app_instance_id}}",
+              "legendFormat": "{{kubernetes_namespace}}/{{app}}/{{kubernetes_pod_name}}",
               "refId": "A",
               "step": 4
             }
@@ -1165,7 +1165,7 @@
               "expr": "jvm_buffer_count{kubernetes_namespace=~\"$kubernetes_namespace\",app=~\"$app\",kubernetes_pod_name=~\"$kubernetes_pod_name\"}",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "{{id}}/{{cf_app_name}}/{{cf_app_instance_id}}",
+              "legendFormat": "{{id}}/{{kubernetes_namespace}}/{{app}}/{{kubernetes_pod_name}}",
               "refId": "A",
               "step": 2
             }
@@ -1243,7 +1243,7 @@
               "expr": "jvm_buffer_memory_used_bytes{kubernetes_namespace=~\"$kubernetes_namespace\",app=~\"$app\",kubernetes_pod_name=~\"$kubernetes_pod_name\"}",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "{{id}}/{{cf_app_name}}/{{cf_app_instance_id}}",
+              "legendFormat": "{{id}}/{{kubernetes_namespace}}/{{app}}/{{kubernetes_pod_name}}",
               "refId": "A",
               "step": 2
             }
@@ -1321,7 +1321,7 @@
               "expr": "jvm_buffer_total_capacity_bytes{kubernetes_namespace=~\"$kubernetes_namespace\",app=~\"$app\",kubernetes_pod_name=~\"$kubernetes_pod_name\"}",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "{{id}}/{{cf_app_name}}/{{cf_app_instance_id}}",
+              "legendFormat": "{{id}}/{{kubernetes_namespace}}/{{app}}/{{kubernetes_pod_name}}",
               "refId": "A",
               "step": 2
             }
@@ -1399,7 +1399,7 @@
               "expr": "jvm_memory_max_bytes{kubernetes_namespace=~\"$kubernetes_namespace\",app=~\"$app\",kubernetes_pod_name=~\"$kubernetes_pod_name\"}",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "{{id}} ({{area}})/{{cf_app_name}}/{{cf_app_instance_id}}",
+              "legendFormat": "{{id}} ({{area}})/{{kubernetes_namespace}}/{{app}}/{{kubernetes_pod_name}}",
               "refId": "F",
               "step": 2
             }
@@ -1478,7 +1478,7 @@
               "format": "time_series",
               "interval": "",
               "intervalFactor": 2,
-              "legendFormat": "{{id}} ({{area}})/{{cf_app_name}}/{{cf_app_instance_id}}",
+              "legendFormat": "{{id}} ({{area}})/{{kubernetes_namespace}}/{{app}}/{{kubernetes_pod_name}}",
               "refId": "A",
               "step": 2
             }
@@ -1556,7 +1556,7 @@
               "expr": "jvm_memory_committed_bytes{kubernetes_namespace=~\"$kubernetes_namespace\",app=~\"$app\",kubernetes_pod_name=~\"$kubernetes_pod_name\"}",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "{{id}} ({{area}})/{{cf_app_name}}/{{cf_app_instance_id}}",
+              "legendFormat": "{{id}} ({{area}})/{{kubernetes_namespace}}/{{app}}/{{kubernetes_pod_name}}",
               "refId": "A",
               "step": 2
             }
@@ -1646,7 +1646,7 @@
               "expr": "jvm_gc_max_data_size_bytes{kubernetes_namespace=~\"$kubernetes_namespace\",app=~\"$app\",kubernetes_pod_name=~\"$kubernetes_pod_name\"}",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "{{cf_app_name}}/{{cf_app_instance_id}}",
+              "legendFormat": "{{kubernetes_namespace}}/{{app}}/{{kubernetes_pod_name}}",
               "refId": "A",
               "step": 2
             }
@@ -1724,7 +1724,7 @@
               "expr": "jvm_gc_live_data_size_bytes{kubernetes_namespace=~\"$kubernetes_namespace\",app=~\"$app\",kubernetes_pod_name=~\"$kubernetes_pod_name\"}",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "{{cf_app_name}}/{{cf_app_instance_id}}",
+              "legendFormat": "{{kubernetes_namespace}}/{{app}}/{{kubernetes_pod_name}}",
               "refId": "A",
               "step": 2
             }
@@ -1802,7 +1802,7 @@
               "expr": "jvm_gc_memory_promoted_bytes_total{kubernetes_namespace=~\"$kubernetes_namespace\",app=~\"$app\",kubernetes_pod_name=~\"$kubernetes_pod_name\"}",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "{{cf_app_name}}/{{cf_app_instance_id}}",
+              "legendFormat": "{{kubernetes_namespace}}/{{app}}/{{kubernetes_pod_name}}",
               "refId": "A",
               "step": 2
             }
@@ -1880,7 +1880,7 @@
               "expr": "jvm_gc_memory_allocated_bytes_total{kubernetes_namespace=~\"$kubernetes_namespace\",app=~\"$app\",kubernetes_pod_name=~\"$kubernetes_pod_name\"}",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "{{cf_app_name}}/{{cf_app_instance_id}}",
+              "legendFormat": "{{kubernetes_namespace}}/{{app}}/{{kubernetes_pod_name}}",
               "refId": "A",
               "step": 2
             }
@@ -1958,7 +1958,7 @@
               "expr": "jvm_gc_pause_seconds_count{kubernetes_namespace=~\"$kubernetes_namespace\",app=~\"$app\",kubernetes_pod_name=~\"$kubernetes_pod_name\"}",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "{{cause}} ({{action}})/{{cf_app_name}}/{{cf_app_instance_id}}",
+              "legendFormat": "{{cause}} ({{action}})/{{kubernetes_namespace}}/{{app}}/{{kubernetes_pod_name}}",
               "refId": "A",
               "step": 2
             }
@@ -2036,7 +2036,7 @@
               "expr": "jvm_gc_pause_seconds_sum{kubernetes_namespace=~\"$kubernetes_namespace\",app=~\"$app\",kubernetes_pod_name=~\"$kubernetes_pod_name\"}",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "{{cause}} ({{action}})/{{cf_app_name}}/{{cf_app_instance_id}}",
+              "legendFormat": "{{cause}} ({{action}})/{{kubernetes_namespace}}/{{app}}/{{kubernetes_pod_name}}",
               "refId": "A",
               "step": 2
             }
@@ -2126,7 +2126,7 @@
               "expr": "jvm_classes_loaded{kubernetes_namespace=~\"$kubernetes_namespace\",app=~\"$app\",kubernetes_pod_name=~\"$kubernetes_pod_name\"}",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "{{cf_app_name}}/{{cf_app_instance_id}}",
+              "legendFormat": "{{kubernetes_namespace}}/{{app}}/{{kubernetes_pod_name}}",
               "refId": "A",
               "step": 30
             }
@@ -2204,7 +2204,7 @@
               "expr": "jvm_classes_unloaded_total{kubernetes_namespace=~\"$kubernetes_namespace\",app=~\"$app\",kubernetes_pod_name=~\"$kubernetes_pod_name\"}",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "{{cf_app_name}}/{{cf_app_instance_id}}",
+              "legendFormat": "{{kubernetes_namespace}}/{{app}}/{{kubernetes_pod_name}}",
               "refId": "A",
               "step": 30
             }
@@ -2296,7 +2296,7 @@
               "expr": "http_server_requests_seconds_count{kubernetes_namespace=~\"$kubernetes_namespace\",app=~\"$app\",kubernetes_pod_name=~\"$kubernetes_pod_name\"}",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "{{method}} {{uri}} - {{status}}/{{cf_app_name}}/{{cf_app_instance_id}}",
+              "legendFormat": "{{method}} {{uri}} - {{status}}/{{kubernetes_namespace}}/{{app}}/{{kubernetes_pod_name}}",
               "refId": "A",
               "step": 30
             }
@@ -2376,7 +2376,7 @@
               "expr": "http_server_requests_seconds_max{kubernetes_namespace=~\"$kubernetes_namespace\",app=~\"$app\",kubernetes_pod_name=~\"$kubernetes_pod_name\"}",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "{{method}} {{uri}} - {{status}}/{{cf_app_name}}/{{cf_app_instance_id}}",
+              "legendFormat": "{{method}} {{uri}} - {{status}}/{{kubernetes_namespace}}/{{app}}/{{kubernetes_pod_name}}",
               "refId": "A",
               "step": 30
             }
@@ -2431,7 +2431,7 @@
   "tags": [
     "java",
     "micrometer",
-    "cf"
+    "k8s"
   ],
   "templating": {
     "list": [
@@ -2528,5 +2528,5 @@
   },
   "timezone": "",
   "title": "Micrometer Summary (k8s)",
-  "version": 1
+  "version": 2
 }
