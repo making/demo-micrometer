@@ -2,6 +2,7 @@ package com.example.demomicrometer;
 
 import io.micrometer.core.aop.TimedAspect;
 import io.micrometer.core.instrument.MeterRegistry;
+import io.micrometer.core.instrument.config.MeterFilter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.actuate.autoconfigure.metrics.MeterRegistryCustomizer;
@@ -31,5 +32,13 @@ public class DemoMicrometerApplication {
     @Bean
     public TimedAspect timedAspect(MeterRegistry meterRegistry) {
         return new TimedAspect(meterRegistry);
+    }
+
+    @Bean
+    public MeterFilter meterFilter() {
+        return MeterFilter.deny(id -> {
+            String uri = id.getTag("uri");
+            return uri != null && uri.startsWith("/actuator");
+        });
     }
 }
