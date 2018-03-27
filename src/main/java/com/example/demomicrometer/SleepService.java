@@ -18,6 +18,6 @@ public class SleepService {
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
-        return "Slept for " + sleep + " ms!";
+        return "Hello World!";
     }
 }
