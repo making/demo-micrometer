@@ -19,12 +19,8 @@ public class DemoMicrometerApplication {
 
     @Bean
     @Profile("cloud")
-    public MeterRegistryCustomizer meterRegistryCustomizer(
-            @Value("${vcap.application.name:}") String applicationName,
-            @Value("${vcap.application.instance_id:}") String instanceId
-    ) {
+    public MeterRegistryCustomizer meterRegistryCustomizer(@Value("${vcap.application.instance_id:foo}") String instanceId) {
         return registry -> registry.config().commonTags(
-                "cf_app_name", applicationName, //
                 "cf_app_instance_id", instanceId //
         );
     }
