@@ -34,7 +34,7 @@ public class DemoMicrometerApplication {
     public MeterFilter meterFilter() {
         return MeterFilter.deny(id -> {
             String uri = id.getTag("uri");
-            return uri != null && uri.startsWith("/actuator");
+            return uri != null && (uri.startsWith("/actuator") || uri.startsWith("/cloudfoundryapplication"));
         });
     }
 }
