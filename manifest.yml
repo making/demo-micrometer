@@ -3,5 +3,3 @@ applications:
   instances: 3
   memory: 1G
   path: target/demo-micrometer-0.0.1-SNAPSHOT.jar
-  services:
-  - demo-mf # cf create-service metrics-forwarder 60x60000 demo-mf
