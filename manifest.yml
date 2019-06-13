@@ -1,5 +1,5 @@
 applications:
 - name: demo-micrometer
   instances: 3
-  memory: 1G
+  memory: 768M
   path: target/demo-micrometer-0.0.1-SNAPSHOT.jar
