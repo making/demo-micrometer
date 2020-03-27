@@ -11,3 +11,4 @@ applications:
     MANAGEMENT_METRICS_TAGS_SPACE: ${vcap.application.space_name}
     MANAGEMENT_METRICS_TAGS_APPLICATION: ${vcap.application.application_name}
     MANAGEMENT_METRICS_TAGS_INSTANCE_ID: ${management.metrics.tags.application}:${vcap.application.instance_index}
+    INFO_PUSH: ((push))

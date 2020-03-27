@@ -54,10 +54,11 @@ jobs:
         CF_PASSWORD: ${{ secrets.CF_PASSWORD }}
         CF_ORG: ${{ secrets.CF_ORG }}
         CF_SPACE: ${{ secrets.CF_SPACE }}
+        TZ: JST
       run: |
         set -e
         wget -q "https://packages.cloudfoundry.org/stable?release=linux64-binary&version=${CF_CLI_VERSION}&source=github-rel" -O cf.tgz
         tar xzf cf.tgz
         rm -f LICENSE NOTICE cf.tgz
         ./cf7 login -a ${CF_API} -u ${CF_USERNAME} -p ${CF_PASSWORD} -o ${CF_ORG} -s ${CF_SPACE}
-        ./cf7 push --strategy rolling
+        ./cf7 push --strategy rolling --var push="$(date)"
