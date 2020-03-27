@@ -54,7 +54,6 @@ jobs:
         CF_PASSWORD: ${{ secrets.CF_PASSWORD }}
         CF_ORG: ${{ secrets.CF_ORG }}
         CF_SPACE: ${{ secrets.CF_SPACE }}
-        TZ: JST
       run: |
         set -e
         wget -q "https://packages.cloudfoundry.org/stable?release=linux64-binary&version=${CF_CLI_VERSION}&source=github-rel" -O cf.tgz
