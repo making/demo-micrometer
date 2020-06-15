@@ -32,19 +32,13 @@ jobs:
     - name: pack build
       if: github.ref == 'refs/heads/master'
       env:
-        PACK_VERSION: 0.9.0
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
       run: |
         set -e
         docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}
-        wget -q https://github.com/buildpacks/pack/releases/download/v${PACK_VERSION}/pack-v${PACK_VERSION}-linux.tgz
-        tar xzf pack-*.tgz
-        rm -f pack-*.tgz
-        ./pack build making/demo-micrometer \
-          -p target/demo-micrometer-*.jar  \
-          --builder cloudfoundry/cnb:bionic \
-          --publish
+        ./mvnw -V spring-boot:build-image -Dmaven.test.skip=true
+        docker push making/demo-micrometer
     - name: cf push
       if: github.ref == 'refs/heads/master'
       env:

@@ -105,6 +105,12 @@
 						</goals>
 					</execution>
 				</executions>
+				<configuration>
+					<imageName>making/${artifactId}</imageName>
+					<layers>
+						<enabled>true</enabled>
+					</layers>
+				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>pl.project13.maven</groupId>
