@@ -33,6 +33,9 @@ jobs:
       run: |
         set -e
         docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}
+        set +e
+        docker pull ${IMAGE_NAME}
+        set -e
         ./mvnw -V spring-boot:build-image -Dspring-boot.build-image.imageName=${IMAGE_NAME} -Dmaven.test.skip=true
         docker push ${IMAGE_NAME}
     - name: cf push
