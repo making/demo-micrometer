@@ -24,21 +24,17 @@ jobs:
       run: |
         set -e
         ./mvnw -V test
-    - name: mvn package
-      if: github.ref == 'refs/heads/master'
-      run: |
-        set -e
-        ./mvnw -V package -Dmaven.test.skip=true
-    - name: pack build
+    - name: mvn spring-boot:build-image
       if: github.ref == 'refs/heads/master'
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        IMAGE_NAME: making/demo-micrometer
       run: |
         set -e
         docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}
-        ./mvnw -V spring-boot:build-image -Dmaven.test.skip=true
-        docker push making/demo-micrometer
+        ./mvnw -V spring-boot:build-image -Dspring-boot.build-image.imageName=${IMAGE_NAME} -Dmaven.test.skip=true
+        docker push ${IMAGE_NAME}
     - name: cf push
       if: github.ref == 'refs/heads/master'
       env:

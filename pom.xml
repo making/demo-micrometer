@@ -106,7 +106,6 @@
 					</execution>
 				</executions>
 				<configuration>
-					<imageName>making/${artifactId}</imageName>
 					<layers>
 						<enabled>true</enabled>
 					</layers>
