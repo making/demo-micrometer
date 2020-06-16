@@ -14,4 +14,4 @@ applications:
     MANAGEMENT_METRICS_TAGS_SPACE: ${vcap.application.space_name}
     MANAGEMENT_METRICS_TAGS_APPLICATION: ${vcap.application.application_name}
     MANAGEMENT_METRICS_TAGS_INSTANCE_ID: ${POD_NAME}
-    INFO_PUSH: ((push))
+    WAVEFRONT_APPLICATION_SHARD: ${POD_NAME}
