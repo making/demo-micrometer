@@ -12,7 +12,7 @@ public class SleepService {
     private final Random random = new Random(System.nanoTime());
 
     @Timed("sleep")
-	@NewSpan
+    @NewSpan
     public String sleep() {
         int i = random.nextInt(100);
         int sleep = (i >= 95) ? 400 : 50;
